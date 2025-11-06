@@ -1,6 +1,5 @@
-import React from 'react';
+import "@/global.css";
 import { Text, View } from 'react-native';
-import "../global.css";
 
 const index = () => {
   return (
