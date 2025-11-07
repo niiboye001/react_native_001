@@ -8,7 +8,7 @@ const index = () => {
   return (
     <View className="flex-1 items-center justify-center">
       <TouchableOpacity onPress={toggleDarkMode}>
-        <Text>Toggle the text</Text>
+        <Text>Toggle Color</Text>
       </TouchableOpacity>
     </View>
   );
