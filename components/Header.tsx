@@ -2,6 +2,7 @@ import { api } from "@/convex/_generated/api";
 import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery } from "convex/react";
+import { LinearGradient } from "expo-linear-gradient";
 import { Text, View } from "react-native";
 
 const Header = () => {
@@ -33,12 +34,16 @@ const Header = () => {
         </View>
       </View>
 
-      {totalCount > 0 && (
-        <View className="flex flex-row items-center gap-3 mt-4">
-          <View className={`bg-slate-200 w-[250px] h-4 rounded-full`}></View>
-          <Text style={{ color: colors.text }}>{Math.round(progressPercentage)}%</Text>
+      <View className="flex flex-row items-center gap-3 mt-7">
+        <View className="bg-slate-300 w-[250px] h-4 rounded-full overflow-hidden">
+          <LinearGradient
+            className="h-full rounded-full"
+            colors={colors.gradients.success}
+            style={{ width: `${progressPercentage}%` }}
+          />
         </View>
-      )}
+        <Text style={{ color: colors.text }}>{Math.round(progressPercentage)}%</Text>
+      </View>
     </View>
   );
 };
