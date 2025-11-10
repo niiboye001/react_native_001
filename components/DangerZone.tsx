@@ -8,7 +8,7 @@ import { Alert, Text, TouchableOpacity, View } from "react-native";
 import * as nwColors from "tailwindcss/colors";
 
 const DangerZone = () => {
-  const { setIsDarkMode } = useTheme();
+  const { isDarkMode, setIsDarkMode } = useTheme();
   const clearAllTodos = useMutation(api.todos.clearAllTodos);
   const todos = useQuery(api.todos.getTodos);
 
@@ -25,8 +25,11 @@ const DangerZone = () => {
           style: "destructive",
           onPress: async () => {
             try {
-              AsyncStorage.getItem("darkMode").then((value) => {
-                if (value) setIsDarkMode(false);
+              AsyncStorage.getItem("darkMode").then(async (value) => {
+                if (value) {
+                  setIsDarkMode(false);
+                  await AsyncStorage.setItem("darkMode", JSON.stringify(false));
+                }
               });
 
               if (totalTodos > 0) {
