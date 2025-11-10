@@ -9,14 +9,14 @@ import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
 import { useMutation, useQuery } from "convex/react";
 import { useState } from "react";
-import { Alert, FlatList, StatusBar, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import kalas from "tailwindcss/colors";
 
 type TodoType = Doc<"todos">;
 
 const index = () => {
-  const { toggleDarkMode, colors, isDarkMode } = useTheme();
+  const { colors, isDarkMode } = useTheme();
   const homeStyles = createHomeStyles(colors);
 
   const [itemToUpdateId, setItemToUpdateId] = useState<Id<"todos"> | null>(null);
@@ -155,8 +155,9 @@ const index = () => {
 
   return (
     <>
-      <StatusBar barStyle={`${colors.statusBarStyle}`} />
-      <SafeAreaView style={{ backgroundColor: colors.bg }} className="flex-1">
+      <SafeAreaView
+        style={{ backgroundColor: colors.bg }}
+        className={`flex-1 ${isDarkMode ? "bg-[#0f172a]" : "bg-slate-200"}`}>
         <Header />
 
         <TodoInput />
@@ -172,7 +173,7 @@ const index = () => {
           showsVerticalScrollIndicator={false}
         />
 
-        <TouchableOpacity onPress={toggleDarkMode}></TouchableOpacity>
+        {/* <TouchableOpacity onPress={toggleDarkMode}></TouchableOpacity> */}
       </SafeAreaView>
     </>
   );
