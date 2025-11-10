@@ -105,7 +105,7 @@ const index = () => {
               />
             </View>
           : <Text
-              className={`text-2xl font-semibold flex-wrap ${isDarkMode && item.isCompleted && "line-through text-slate-500"} ${isDarkMode && !item.isCompleted && "text-white"} ${item.isCompleted && "line-through text-slate-400"}`}>
+              className={`text-2xl font-semibold flex-wrap ${isDarkMode && item.isCompleted && "line-through text-slate-500"} ${isDarkMode && !item.isCompleted && "text-slate-300"} ${!isDarkMode && !item.isCompleted && "text-slate-600"} ${item.isCompleted && "line-through text-slate-400"}`}>
               {item.text}
             </Text>
           }
