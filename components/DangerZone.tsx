@@ -34,7 +34,7 @@ const DangerZone = () => {
 
                 Alert.alert(
                   "App Reset",
-                  `Successfully deleted ${result.deletedCount} todo${result.deletedCount > 1 && "s"}. Your app has been fully reset.`
+                  `Successfully deleted ${result.deletedCount} todo${result.deletedCount > 1 ? "s" : ""}. Your app has been fully reset.`
                 );
               } else {
                 Alert.alert(
