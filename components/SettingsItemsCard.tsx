@@ -7,9 +7,9 @@ const SettingsItemsCard = ({ children, title = "" }: { children: ReactNode; titl
 
   return (
     <View
-      className={`${isDarkMode ? "bg-slate-800" : "bg-white"} flex flex-col py-5 px-5 mt-7 mx-7 rounded-2xl`}>
+      className={`${isDarkMode ? "bg-slate-800" : "bg-white"} flex flex-col py-7 px-5 mt-7 mx-7 rounded-2xl`}>
       <Text
-        className={`${isDarkMode ? "text-slate-100" : "text-slate-700"} text-[25px] font-bold mt-10 mb-5`}>
+        className={`${isDarkMode ? "text-slate-100" : "text-slate-700"} text-[25px] font-bold mb-5`}>
         {title}
       </Text>
       {children}

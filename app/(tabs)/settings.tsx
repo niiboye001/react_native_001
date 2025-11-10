@@ -1,3 +1,4 @@
+import DangerZone from "@/components/DangerZone";
 import PreferencesItemCard from "@/components/PreferencesItemCard";
 import ProgressStatsCard from "@/components/ProgressStatsCard";
 import SettingsItemsCard from "@/components/SettingsItemsCard";
@@ -8,7 +9,7 @@ import { useQuery } from "convex/react";
 import { LinearGradient } from "expo-linear-gradient";
 import { ScrollView, StatusBar, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import nwColors from "tailwindcss/colors";
+import * as nwColors from "tailwindcss/colors";
 
 const Settings = () => {
   const { isDarkMode } = useTheme();
@@ -51,7 +52,7 @@ const Settings = () => {
           </SettingsItemsCard>
 
           <SettingsItemsCard title="Danger Zone">
-            <View></View>
+            <DangerZone />
           </SettingsItemsCard>
         </ScrollView>
       </SafeAreaView>
